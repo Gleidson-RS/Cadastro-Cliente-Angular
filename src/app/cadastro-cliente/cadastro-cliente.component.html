@@ -1,1 +1,80 @@
-<p>cadastro-cliente works!</p>
+
+<div id="links" class="links">
+    <li> <a routerLink="/src/app/cadastro-cliente/cadastro-cliente.component.html" class="links"> Inicio </a> </li>
+    <li> <a routerLink="/src/app/cadastro-cliente/paginas/formulario.html" class="links"> formulario </a> </li>
+    <li> <a routerLink="/src/app/cadastro-cliente/paginas/editar.html" class="links"> Edição </a> </li>
+</div>
+
+
+<div id="form">
+    <h3>Cadastro Cliente</h3>
+
+    <form id="formulario">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" [(ngModel)] ="nome" >
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" [(ngModel)] ="email" >
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" [(ngModel)] ="cpf" >
+
+        <label for="data">Data de nascimento</label>
+        <input type="date" name="data" id="data" [(ngModel)] ="data" >
+
+        <label for="uf">UF</label>
+        <select name="uf" id="uf">
+            <option value="">Selecione uma UF</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+
+        <label for="municipio">Município</label>
+        <input type="text" name="municipio" id="municipio" [(ngModel)] ="municipio" >
+
+        <div id="btns">
+
+            <button type="button" id="btnAdd" (click)="addCliente()">Cadastrar</button>
+            <button type="button" id="btnLimpar">Limpar tudo</button>
+
+
+        </div>
+    </form>
+    
+
+    @for(elem of listaCliente; track elem.nome )
+
+    {
+        <div class="div-Cliente">
+            <input type="checkbox" [(ngModel)]="elem.statusSelecionado" [ngModelOptions]="{standalone: true}" > {{elem.nome}} - <span [class.selecionado]="elem.statusSelecionado"> {{elem.cpf}} </span>  - {{elem.data}}  - {{elem.uf}}  - {{elem.municipio}}  </div>
+    }@empty{
+        <div class="div-Cliente"> Nenhum Cliente na lista</div>
+    }
+
+
+</div>
