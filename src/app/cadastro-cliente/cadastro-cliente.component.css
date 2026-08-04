@@ -241,7 +241,8 @@ button{
 
 /* Menu */
 
-.links{
+.menu-lnk{
+    background-color: #141414;
     display:flex;
     gap:90px;
     list-style:none;
@@ -251,25 +252,25 @@ button{
 }
 
 
-.links a{
+.menu-lnk a{
     text-decoration:none;
     color:#222;
     font-weight:bold;
 }
 
 
-.links a{
+.menu-lnk a{
 
     text-decoration:none;
 
-    color:#222;
+    color:#ff0000;
 
     font-weight:bold;
 
 }
 
 
-.links a:hover{
+.menu-lnk a:hover{
 
     color:#d12a2a;
 }
@@ -300,7 +301,7 @@ button{
     }
 
 
-    .links{
+    .menu-lnk{
 
         position:static;
 

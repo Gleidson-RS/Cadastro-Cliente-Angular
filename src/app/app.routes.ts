@@ -5,10 +5,16 @@ import { EditarComponent } from './cadastro-cliente/paginas/editar/editar.compon
 
 export const routes: Routes = [
 
-  { path: '', component: CadastroClienteComponent },
+  { 
+    path: '',
+    component: CadastroClienteComponent },
 
-  {path: 'formulario', component: FormularioComponent },
+  {
+    path: 'formulario',
+    component: FormularioComponent },
 
-  {path: 'editar', component: EditarComponent }
+  {
+    path: 'editar',
+    component: EditarComponent }
 
 ];

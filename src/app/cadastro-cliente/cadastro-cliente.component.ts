@@ -27,8 +27,6 @@ export class CadastroClienteComponent {
  
     //INSTANCIANDO A CLASS ITEM
   
-  //
-  
     let item = new Cliente() 
 
     item.nome = this.nome
