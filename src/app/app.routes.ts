@@ -4,16 +4,11 @@ import { FormularioComponent } from './cadastro-cliente/paginas/formulario/formu
 import { EditarComponent } from './cadastro-cliente/paginas/editar/editar.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: CadastroClienteComponent
-  },
-  {
-    path: 'formulario',
-    component: FormularioComponent
-  },
-  {
-    path: 'editar',
-    component: EditarComponent
-  }
+
+  { path: '', component: CadastroClienteComponent },
+
+  {path: 'formulario', component: FormularioComponent },
+
+  {path: 'editar', component: EditarComponent }
+
 ];
