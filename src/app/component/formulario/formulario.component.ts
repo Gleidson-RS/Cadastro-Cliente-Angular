@@ -1,8 +1,7 @@
-import { Component } from '@angular/core'
-import { FormsModule } from '@angular/forms'
-import { RouterLink, RouterLinkActive } from '@angular/router'
-import { PessoaServiceService } from '../../service/pessoa-service.service'
-import { Pessoa } from '../../model/pessoa'
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PessoaServiceService } from '../../service/pessoa-service.service';
 
 @Component({
   selector: 'app-formulario',
@@ -13,11 +12,11 @@ import { Pessoa } from '../../model/pessoa'
 })
 export class FormularioComponent {
 
-  id = 0
-  nome = ''
-  email = ''
-  cpf = 0
-  data = ''
+  id = 0;
+  nome = '';
+  email = '';
+  cpf = 0;
+  data = '';
 
   constructor(private pessoaService: PessoaServiceService) {}
 
@@ -31,5 +30,3 @@ export class FormularioComponent {
     });
   }
 }
-
-console.log(Pessoa)

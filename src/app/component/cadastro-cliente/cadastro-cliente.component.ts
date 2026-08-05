@@ -13,7 +13,6 @@ import { Pessoa } from "../../model/pessoa"
 })
 export class CadastroClienteComponent {
 
-  id = 0
   nome: string = ''
   email: string = ''
   cpf: number = 0
