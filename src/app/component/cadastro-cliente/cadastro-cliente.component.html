@@ -21,16 +21,16 @@
 
     <form id="formulario">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" [(ngModel)] ="nome" >
+        <input type="text" name="nome" id="nome">
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" [(ngModel)] ="email" >
+        <input type="email" name="email" id="email">
 
         <label for="cpf">CPF</label>
-        <input type="text" name="cpf" id="cpf" [(ngModel)] ="cpf" >
+        <input type="text" name="cpf" id="cpf">
 
         <label for="data">Data de nascimento</label>
-        <input type="date" name="data" id="data" [(ngModel)] ="data" >
+        <input type="date" name="data" id="data">
 
         <label for="uf">UF</label>
         <select name="uf" id="uf">
@@ -65,26 +65,15 @@
         </select>
 
         <label for="municipio">Município</label>
-        <input type="text" name="municipio" id="municipio" [(ngModel)] ="municipio" >
+        <input type="text" name="municipio" id="municipio">
 
         <div id="btns">
 
-            <button type="button" id="btnAdd" (click)="addCliente()">Cadastrar</button>
+            <button type="button" id="btnAdd" >Cadastrar</button>
             <button type="button" id="btnLimpar">Limpar tudo</button>
 
 
         </div>
     </form>
-    
-
-    @for(elem of listaCliente; track elem.nome )
-
-    {
-        <div class="div-Cliente">
-            <input type="checkbox" [(ngModel)]="elem.statusSelecionado" [ngModelOptions]="{standalone: true}" > {{elem.nome}} - <span [class.selecionado]="elem.statusSelecionado"> {{elem.cpf}} </span>  - {{elem.data}}  - {{elem.uf}}  - {{elem.municipio}}  </div>
-    }@empty{
-        <div class="div-Cliente"> Nenhum Cliente na lista</div>
-    }
-
 
 </div>

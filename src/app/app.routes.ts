@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
-import { FormularioComponent } from './cadastro-cliente/paginas/formulario/formulario.component';
-import { EditarComponent } from './cadastro-cliente/paginas/editar/editar.component';
+import { CadastroClienteComponent } from './component/cadastro-cliente/cadastro-cliente.component';
+import { FormularioComponent } from './component/formulario/formulario.component';
+import { EditarComponent } from './component/editar/editar.component';
 
 export const routes: Routes = [
 

@@ -6,7 +6,4 @@ export class Pessoa{
     cpf? : number
     data?: Date | null = null
 
-
-    statusSelecionado : boolean = false
-
 }
