@@ -13,9 +13,11 @@ body{
 /* Container do formulário */
 
 #form{
+    margin: 20px;
     width:100%;
     max-width:700px;
     padding:20px;
+
 
     margin: 0px auto;
 }

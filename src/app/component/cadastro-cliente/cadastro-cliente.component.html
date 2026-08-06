@@ -20,20 +20,20 @@
     <h3>Cadastro De Novo Cliente</h3>
 
     <form id="formulario">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" [(ngModel)]="nome">
+        <label for="nome">Nome Completo</label>
+        <input type="text" name="nome" id="nome" maxlength="30" placeholder="Informe Seu Nome Completo" [(ngModel)]="nome">
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" [(ngModel)]="email">
+        <input type="email" name="email" id="email" maxlength="30" placeholder="Informe Seu Email"  [(ngModel)]="email">
 
         <label for="cpf">CPF</label>
-        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf">
+        <input type="text" name="cpf" id="cpf" maxlength="14" placeholder="Informe Seu CPF"  [(ngModel)]="cpf">
 
         <label for="data">Data de nascimento</label>
-        <input type="date" name="data" id="data" [(ngModel)]="data">
+        <input type="date" name="data" id="data" maxlength="8" placeholder="Informe Sua data de nascimento"  [(ngModel)]="data">
 
-        <label for="uf">UF</label>
-        <select name="uf" id="uf">
+        <label for="uf">Estado</label>
+        <select name="uf" id="uf" placeholder="Informe Seu Estado" [(ngModel)]="uf">
             <option value="">Selecione uma UF</option>
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
@@ -65,11 +65,11 @@
         </select>
 
         <label for="municipio">Município</label>
-        <input type="text" name="municipio" id="municipio">
+        <input type="text" name="municipio" id="municipio" maxlength="30" placeholder="Informe Seu Município" [(ngModel)]="municipio">
 
         <div id="btns">
 
-            <button type="button" id="btnAdd" (click)="adicionar()" >Cadastrar</button>
+            <button routerLink="/formulario" class="lnk-rota" type="button" id="btnAdd" (click)="adicionar()" >Cadastrar</button>
             <button type="button" id="btnLimpar">Limpar tudo</button>
 
 

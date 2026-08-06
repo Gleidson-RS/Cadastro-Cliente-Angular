@@ -5,5 +5,6 @@ export class Pessoa{
     email? : string
     cpf? : number
     data?: Date | null = null
-
+    uf?: string
+    municipio?: string
 }

@@ -12,14 +12,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
+
 export class FormularioComponent implements OnInit {
 
   listaClientes: Pessoa[] = [];
 
   constructor(private pessoaService: PessoaServiceService) {}
+  
 
-  ngOnInit(): void {
-    this.listaClientes = this.pessoaService.listar();
+  ngOnInit(): void { //chama afunção no momento que a pagina é carregada
+    this.listaClientes = this.pessoaService.listar(); // Solicita a lista de pessoas pra o pessoaService e manda pra a função listar
   }
 
 }
