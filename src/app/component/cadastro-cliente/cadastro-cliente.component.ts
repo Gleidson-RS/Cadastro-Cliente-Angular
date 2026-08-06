@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Pessoa } from "../../model/pessoa"
-
+import { Pessoa } from '../../model/pessoa';
+import { PessoaServiceService } from '../../service/pessoa-service.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -13,13 +13,28 @@ import { Pessoa } from "../../model/pessoa"
 })
 export class CadastroClienteComponent {
 
-  nome: string = ''
-  email: string = ''
-  cpf: number = 0
-  data: Date | null = null
+  nome = '';
+  email = '';
+  cpf = 0;
+  data: Date | null = null;
 
+  constructor(private pessoaService: PessoaServiceService) {}
 
-  listaCliente : Pessoa [] = []
+  adicionar() {
 
+    const pessoa: Pessoa = {
+      nome: this.nome,
+      email: this.email,
+      cpf: this.cpf,
+      data: this.data
+    };
+
+    this.pessoaService.adicionar(pessoa);
+
+    this.nome = '';
+    this.email = '';
+    this.cpf = 0;
+    this.data = null;
+  }
 
 }

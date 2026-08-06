@@ -21,16 +21,16 @@
 
     <form id="formulario">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" [(ngModel)]="nome">
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" [(ngModel)]="email">
 
         <label for="cpf">CPF</label>
-        <input type="text" name="cpf" id="cpf">
+        <input type="text" name="cpf" id="cpf" [(ngModel)]="cpf">
 
         <label for="data">Data de nascimento</label>
-        <input type="date" name="data" id="data">
+        <input type="date" name="data" id="data" [(ngModel)]="data">
 
         <label for="uf">UF</label>
         <select name="uf" id="uf">
@@ -69,7 +69,7 @@
 
         <div id="btns">
 
-            <button type="button" id="btnAdd" >Cadastrar</button>
+            <button type="button" id="btnAdd" (click)="adicionar()" >Cadastrar</button>
             <button type="button" id="btnLimpar">Limpar tudo</button>
 
 

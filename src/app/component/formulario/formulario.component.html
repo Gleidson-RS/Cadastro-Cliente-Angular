@@ -9,7 +9,7 @@
 
         <div id="menu-lnk" class="menu-lnk">
             <li> <a routerLink="/" class="lnk-rota"> Inicio </a> </li>
-            <li> <a routerLink="/formulario" class="lnk-rota"> formulario </a> </li>
+            <li> <a router  Link="/formulario" class="lnk-rota"> formulario </a> </li>
             <li> <a routerLink="/editar" class="lnk-rota"> Edição </a> </li>
         </div>
     
@@ -19,6 +19,18 @@
     
     <div id="form">
         
-        <h3> Formulario De Clientes </h3>
+        <div *ngFor="let pessoa of listaClientes">
+
+            <h3>{{ pessoa.nome }}</h3>
+        
+            <p>Email: {{ pessoa.email }}</p>
+        
+            <p>CPF: {{ pessoa.cpf }}</p>
+        
+            <p>Data: {{ pessoa.data }}</p>
+        
+            <hr>
+        
+        </div>
     
     </div>
