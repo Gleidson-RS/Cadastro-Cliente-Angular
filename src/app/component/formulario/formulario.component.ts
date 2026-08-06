@@ -17,7 +17,7 @@ export class FormularioComponent implements OnInit {
 
   listaClientes: Pessoa[] = [];
 
-  constructor(private pessoaService: PessoaServiceService) {}
+  constructor(private pessoaService: PessoaServiceService) {} //traz as dependencias do pessoa.ts
   
 
   ngOnInit(): void { //chama afunção no momento que a pagina é carregada
