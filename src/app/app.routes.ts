@@ -14,7 +14,9 @@ export const routes: Routes = [
     component: FormularioComponent },
 
   {
-    path: 'editar',
+    path: 'editar/:id',
     component: EditarComponent }
+
+
 
 ];

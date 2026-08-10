@@ -14,6 +14,14 @@ export class PessoaServiceService {
         return this.pessoas
     }
 
+    excluir(indice: number) {
+        this.pessoas.splice(indice, 1)
+    }
 
+    /*
+    editar(pessoa: Pessoa){
+        this.pessoas.
 
+    }
+*/
 }

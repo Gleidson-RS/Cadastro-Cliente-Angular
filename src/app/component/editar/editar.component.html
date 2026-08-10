@@ -1,12 +1,12 @@
 
 <header>
 
-    <title> Edição De Clientes Cadastrados </title>
+    <title>Inicio</title>
     
     </header>
-
+    
     <main id="geral">
-
+    
         <div id="menu-lnk" class="menu-lnk">
             <li> <a routerLink="/" class="lnk-rota"> Inicio </a> </li>
             <li> <a routerLink="/formulario" class="lnk-rota"> formulario </a> </li>
@@ -15,10 +15,64 @@
     
     </main>
     
-
-    
     <div id="form">
-        
-        <h3> Edição De Clientes </h3>
+        <h3>Edição De Cliente</h3>
+    
+        <form id="formulario">
+            <label for="nome">Nome Completo</label>
+            <input type="text" name="nome" id="nome" maxlength="30" placeholder="Informe Seu Nome Completo" [(ngModel)]="nome">
+    
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" maxlength="30" placeholder="Informe Seu Email"  [(ngModel)]="email">
+    
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" maxlength="14" placeholder="Informe Seu CPF"  [(ngModel)]="cpf">
+    
+            <label for="data">Data de nascimento</label>
+            <input type="date" name="data" id="data" maxlength="8" placeholder="Informe Sua data de nascimento"  [(ngModel)]="data">
+    
+            <label for="uf">Estado</label>
+            <select name="uf" id="uf" placeholder="Informe Seu Estado" [(ngModel)]="uf">
+                <option value="">Selecione uma UF</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+    
+            <label for="municipio">Município</label>
+            <input type="text" name="municipio" id="municipio" maxlength="30" placeholder="Informe Seu Município" [(ngModel)]="municipio">
+    
+            <div id="btns">
+    
+                <button routerLink="/formulario" class="lnk-rota" type="button" id="btnAdd" >Cadastrar</button>
+                <button type="button" id="btnLimpar">Limpar tudo</button>
+    
+    
+            </div>
+        </form>
     
     </div>

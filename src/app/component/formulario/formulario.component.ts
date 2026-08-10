@@ -24,4 +24,11 @@ export class FormularioComponent implements OnInit {
     this.listaClientes = this.pessoaService.listar(); // Solicita a lista de pessoas pra o pessoaService e manda pra a função listar
   }
 
+
+  excluir(indice: number) {
+    this.pessoaService.excluir(indice)
 }
+
+}
+
+
