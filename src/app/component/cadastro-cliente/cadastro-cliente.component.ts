@@ -13,6 +13,7 @@ import { PessoaServiceService } from '../../service/pessoa-service.service';
 })
 export class CadastroClienteComponent {
 
+  id = 0
   nome = ''
   email = ''
   cpf = 0
@@ -26,6 +27,7 @@ export class CadastroClienteComponent {
 
     //Cria uma variável constante local chamada pessoa e atribui os valores em seus repectivos campos.
     const pessoa: Pessoa = { 
+      id: this.pessoaService.tamanhoArray() + 1,
       nome: this.nome,   
       email: this.email,
       cpf: this.cpf,

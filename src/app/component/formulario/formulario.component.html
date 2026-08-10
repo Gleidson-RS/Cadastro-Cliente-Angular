@@ -15,13 +15,11 @@
 
     <div id="form">
 
-<<<<<<< HEAD
         <div *ngFor="let pessoa of listaClientes; let i = index" >
-=======
-        <div *ngFor="let pessoa of listaClientes">
->>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
 
             <h3>{{ pessoa.nome }}</h3>
+
+            <p>Id do usurario: {{ pessoa.id }}</p><p>-------------------</p>
             
             <p>Email: {{ pessoa.email }}</p><p>-------------------</p>
         
@@ -32,13 +30,10 @@
             <p>Estado: {{ pessoa.uf }}</p><p>-------------------</p>
         
             <p>Município: {{ pessoa.municipio }}</p><p>-------------------</p>
-<<<<<<< HEAD
 
             <button (click)="excluir(i)" >Excluir</button>
 
             <button [routerLink]="['/editar', pessoa.id]">Editar</button>
-=======
->>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
         </div>
     
     </div>

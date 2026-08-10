@@ -1,15 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Pessoa } from '../../model/pessoa';
 import { PessoaServiceService } from '../../service/pessoa-service.service';
-
-=======
-import { RouterLink } from '@angular/router';
-import { RouterLinkActive } from '@angular/router';
->>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
-
 
 @Component({
   selector: 'app-editar',
@@ -18,24 +11,46 @@ import { RouterLinkActive } from '@angular/router';
   templateUrl: './editar.component.html',
   styleUrl: './editar.component.css'
 })
-<<<<<<< HEAD
+export class EditarComponent implements OnInit {
 
-export class EditarComponent {
+  id = 0;
 
-  nome = ''
-  email = ''
-  cpf = 0
-  data: Date | null = null
-  uf = ''
-  municipio = ''
+  nome = '';
+  email = '';
+  cpf = 0;
+  data: Date | null = null;
+  uf = '';
+  municipio = '';
 
-  constructor(private pessoaService: PessoaServiceService) {}
+  constructor(
+    private pessoaService: PessoaServiceService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  adicionar() { //
+  ngOnInit(): void {
 
-    //Cria uma variável constante local chamada pessoa e atribui os valores em seus repectivos campos.
-    const pessoa: Pessoa = { 
-      nome: this.nome,   
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    const pessoa = this.pessoaService.buscarPorId(this.id);
+
+    if (pessoa) {
+      this.nome = pessoa.nome ?? '';
+      this.email = pessoa.email ?? '';
+      this.cpf = pessoa.cpf ?? 0;
+      this.data = pessoa.data ?? null;
+      this.uf = pessoa.uf ?? '';
+      this.municipio = pessoa.municipio ?? '';
+    }
+
+  }
+
+  salvar() {
+
+    const pessoa: Pessoa = {
+
+      id: this.id,
+      nome: this.nome,
       email: this.email,
       cpf: this.cpf,
       data: this.data,
@@ -44,24 +59,10 @@ export class EditarComponent {
 
     };
 
+    this.pessoaService.atualizar(pessoa);
 
-      
-    this.pessoaService.adicionar(pessoa); //envia o a variavel criada anteriormente para a classe de serviço (pessoaServive).
+    this.router.navigate(['/formulario']);
 
-
-    //limpa as caixas depois de enviar os dados.
-    this.nome = ''
-    this.email = ''
-    this.cpf = 0
-    this.data = null
-    this.uf = ''
-    this.municipio = ''
   }
 
 }
-=======
-export class EditarComponent {
-
-}
-
->>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
