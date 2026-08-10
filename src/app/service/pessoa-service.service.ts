@@ -14,6 +14,7 @@ export class PessoaServiceService {
         return this.pessoas
     }
 
+<<<<<<< HEAD
     excluir(indice: number) {
         this.pessoas.splice(indice, 1)
     }
@@ -24,4 +25,8 @@ export class PessoaServiceService {
 
     }
 */
+=======
+
+
+>>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
 }

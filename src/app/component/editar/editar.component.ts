@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Pessoa } from '../../model/pessoa';
 import { PessoaServiceService } from '../../service/pessoa-service.service';
 
+=======
+import { RouterLink } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
+>>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
 
 
 @Component({
@@ -13,6 +18,7 @@ import { PessoaServiceService } from '../../service/pessoa-service.service';
   templateUrl: './editar.component.html',
   styleUrl: './editar.component.css'
 })
+<<<<<<< HEAD
 
 export class EditarComponent {
 
@@ -53,3 +59,9 @@ export class EditarComponent {
   }
 
 }
+=======
+export class EditarComponent {
+
+}
+
+>>>>>>> 2b726ef0d023058c8c10c456462af4efa5ed5222
