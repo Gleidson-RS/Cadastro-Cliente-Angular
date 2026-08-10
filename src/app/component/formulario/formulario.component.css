@@ -1,0 +1,104 @@
+/* Reset básico para remover margens e padronizar o layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f6f8;
+    color: #333;
+  }
+  
+  #geral {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* ===================================
+     BARRA DE NAVEGAÇÃO (#menu-lnk)
+     =================================== */
+  #menu-lnk, .menu-lnk {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-lnk li {
+    list-style: none;
+  }
+  
+  .lnk-rota {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .lnk-rota:hover {
+    color: #ffffff;
+  }
+  
+  /* ===================================
+     CONTAINER DE CARDS (#form)
+     =================================== */
+  #form {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Card individual gerado pelo *ngFor */
+  #form > div {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  #form > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Título do Card (Nome do Cliente) */
+  #form > div > h3 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff4d4d;
+  }
+  
+  /* Estilização dos campos de dados */
+  #form > div > p {
+    font-size: 0.95rem;
+    color: #444;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  
+  #form > div > p:last-of-type {
+    border-bottom: none;
+  }
+  
+  /* Esconde as linhas de traços textuais (-------------------) da exibição */
+  #form > div > p:nth-child(odd):not(h3) {
+    display: none;
+  }

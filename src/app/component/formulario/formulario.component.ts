@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Pessoa } from '../../model/pessoa';
+import { PessoaServiceService } from '../../service/pessoa-service.service';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-formulario',
+  standalone: true,
+  imports: [FormsModule, RouterLink, RouterLinkActive, CommonModule],
+  templateUrl: './formulario.component.html',
+  styleUrl: './formulario.component.css'
+})
+
+export class FormularioComponent implements OnInit {
+
+  listaClientes: Pessoa[] = [];
+
+  constructor(private pessoaService: PessoaServiceService) {} //traz as dependencias do pessoa.ts
+  
+
+  ngOnInit(): void { //chama afunção no momento que a pagina é carregada
+    this.listaClientes = this.pessoaService.listar(); // Solicita a lista de pessoas pra o pessoaService e manda pra a função listar
+  }
+
+}
