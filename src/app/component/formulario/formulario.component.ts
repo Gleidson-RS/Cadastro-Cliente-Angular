@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { Pessoa } from '../../model/pessoa';
-import { PessoaServiceService } from '../../service/pessoa-service.service';
+import { PessoaServiceService } from '../../services/pessoa/pessoa.service';
 import { CommonModule } from '@angular/common';
+import { UfMunicipioService } from '../../services/uf-municipios/uf-municipio-service';
 
 @Component({
   selector: 'app-formulario',
@@ -17,7 +18,13 @@ export class FormularioComponent implements OnInit {
 
   listaClientes: Pessoa[] = [];
 
-  constructor(private pessoaService: PessoaServiceService) {} //traz as dependencias do pessoa.ts
+  constructor(
+
+    private route: ActivatedRoute,
+    private pessoaService: PessoaServiceService,
+    private UfMunicipioService: UfMunicipioService
+
+    ) {} //traz as dependencias do pessoa.ts
   
 
   ngOnInit(): void { //chama afunção no momento que a pagina é carregada
@@ -29,6 +36,8 @@ export class FormularioComponent implements OnInit {
   excluir(indice: number) {
     this.pessoaService.excluir(indice)
 }
+
+
 
 }
 

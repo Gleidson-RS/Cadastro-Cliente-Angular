@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+
 import { Pessoa } from '../../model/pessoa';
-import { PessoaServiceService } from '../../service/pessoa-service.service';
+import { PessoaServiceService } from '../../services/pessoa/pessoa.service';
+
+import { UfMunicipioService } from '../../services/uf-municipios/uf-municipio-service';
+import { Estado } from '../../model/estado';
+import { Municipio } from '../../model/municipio';
+import { error, warn } from 'console';
 
 @Component({
   selector: 'app-cadastro-cliente',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './cadastro-cliente.component.html',
   styleUrl: './cadastro-cliente.component.css'
 })
@@ -20,8 +27,21 @@ export class CadastroClienteComponent {
   data: Date | null = null
   uf = ''
   municipio = ''
+  listaUfs : Estado[] = []
+  listaMunicipios : Municipio[] = []
 
-  constructor(private pessoaService: PessoaServiceService) {}
+  constructor(
+
+    private route: ActivatedRoute,
+    private pessoaService: PessoaServiceService,
+    private UfMunicipioService: UfMunicipioService
+
+    ) {}
+
+    ngOnInit(){
+
+      this.carregaEstadosSelect() 
+    }
 
   adicionar() { //
 
@@ -33,7 +53,7 @@ export class CadastroClienteComponent {
       cpf: this.cpf,
       data: this.data,
       uf: this.uf,
-      municipio: this.municipio
+      municipio: this.municipio,
 
     };
 
@@ -50,5 +70,42 @@ export class CadastroClienteComponent {
     this.uf = ''
     this.municipio = ''
   }
+
+  
+carregaEstadosSelect(){
+
+  this.UfMunicipioService.listaUF()
+  .subscribe({
+    next:(dadosUf)=>{
+      this.listaUfs = [...dadosUf].sort((a, b) => a.nome.localeCompare(b.nome))
+    },
+    error:(msgErro)=>{
+      console.log('Erro ao carregar os Estados', msgErro)
+    }
+  })
+
+}
+
+carregaMunicipiosSelect(){
+
+  if (!this.uf){
+    this.municipio = ''
+    this.listaMunicipios = []
+    
+    return
+  }
+
+  this.UfMunicipioService.listaMunicipios(Number(this.uf))
+  .subscribe({
+    next:(dadosMunicipio) =>{
+      this.listaMunicipios = dadosMunicipio
+    },
+    error:(msgErro)=>{
+      console.log('Erro ao carregar os Municípios', msgErro)
+    }
+  })
+
+}
+
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Pessoa } from '../../model/pessoa';
-import { PessoaServiceService } from '../../service/pessoa-service.service';
+import { PessoaServiceService } from '../../services/pessoa/pessoa.service';
 
 @Component({
   selector: 'app-editar',
