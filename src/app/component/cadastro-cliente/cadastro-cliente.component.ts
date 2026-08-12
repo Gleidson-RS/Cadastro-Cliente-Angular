@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 import { Pessoa } from '../../model/pessoa';
 import { PessoaServiceService } from '../../services/pessoa/pessoa.service';
